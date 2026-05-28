@@ -1,0 +1,31 @@
+->Ways to Add CSS: Inline, Internal, and External
+Selectors in CSS:
+1.Id Selectors
+2.Class Selectors
+3.Name Selector
+4.Group Selectors
+5.Descendant Selectors
+6.attributes Selectors
+7.child Selector
+
+*Box sizing: how the width and height of an element are calculated.
+1.context box: if height and width are 200px then only content size become 200px
+2.border-box: content-size(120px),padding(40px),border will be included in height(200px) and width. 
+*Types of units:
+1.view width:
+2.View height = to refer html document
+3.em->to refer from parent to child
+4.rem->
+5.percentage
+6.pixel
+Display properties:
+1.inline element- no new line ,no space needed eg.<strong>,<b>,<em>
+2.block level element-content that are small and are giving full view eg.<p> height and width are needed
+3.inline block element- no new line, no space needed but height and width needed
+
+Position:
+1.static (top,bottom,left,right cannot be applied for static position)
+2. Relative :relative to its normal position.
+3. absolute :positioned based on the nearest NON-STATIC positioned parent element.
+4. fixed: take the fixed position of the html element.
+5. sticky: stick to the defined position using top, left, bottom.
