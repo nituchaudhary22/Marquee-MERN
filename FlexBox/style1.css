@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.main {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+}
+.box {
+    margin: 10px;
+    background-color: aqua;
+    padding: 50px;
+    border: 10px solid rgb(3, 10, 20);
+    height: 100px;
+    width: 50px;
+    /* width: 200px; */
+}
+#box1 {
+    order: 1;/* order=1 moves to last position,0 moves to initial position,-1 moves to first position*/
+}
+#box2 {
+    flex-shrink: 1; /* fit the container*/
+    flex-basis: 200px; /* initially width does not change after assigning*/
+}
+#box3 {
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+#box4 {
+    flex-grow: 2;
+    flex-shrink: 1;
+    order: -1;
+}
+#box5 {
+    flex-grow: 1; /*  changes the width of the box,takes extra space that is left(0,1,2) values */
+    background-color: blueviolet;
+    
+}
