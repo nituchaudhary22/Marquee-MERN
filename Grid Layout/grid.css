@@ -10,7 +10,7 @@
     grid-template-rows: repeat(3, 1fr);
     /* width: 50vw;
     height: 600px; */
-    background-color: rgb(236, 99, 190);
+    background-color: rgb(245, 61, 184);
     row-gap: 10px;
     column-gap: 10px;
     justify-content: center;
@@ -31,8 +31,9 @@
     justify-items: center;
     margin: 10px;
 }
-#item-1{
+#item1{
     grid-column: 2/span 2;
-    background-color: rgb(18, 25, 25);
+    grid-area: 1/2/4/3;
+    background-color: rgb(14, 1, 43);
 }
 
