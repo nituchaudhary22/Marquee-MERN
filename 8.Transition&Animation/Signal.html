@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal</title>
+    <style>
+        .signal{
+            background-color: gray;
+            border: 5px black solid;
+            width:150px;
+            height:350px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            margin: 10px;
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+        #box1{
+            background-color: red;
+            animation-name: glow;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            opacity: 0.5;
+        }
+        @keyframes glow {
+            0%,33.33%{
+                opacity: 1;
+            }
+            33.34%,66.67%{
+                opacity:0.5;
+            }
+            66.68%,100%{
+                opacity: 0.5;
+            }
+
+        }
+        #box2{
+            background-color: yellow;
+            animation-name: glow2;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+
+        }
+        @keyframes glow2 {
+           0%,33.33%{
+                opacity: 0.5;
+            }
+            33.34%,66.67%{
+                opacity:1;
+            }
+            66.68%,100%{
+                opacity: 0.5;
+            }
+        }
+        #box3{
+            background-color: green;
+            animation-name:glow3;
+             animation-duration: 2s; 
+            animation-iteration-count: infinite;
+
+        }
+        @keyframes glow3 {
+            0%,33.33%{
+                opacity: 0.5;
+            }
+            33.34%,66.67%{
+                opacity:0.5;
+            }
+            66.68%,100%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signal">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+    </div>
+</body>
+</html>

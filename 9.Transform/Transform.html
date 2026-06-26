@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        img{
+            transition-duration: 5s;
+            /* transform: rotate(0deg); */
+            animation: rotate 1s ease-in-out infinite;
+        }
+        @keyframes rotate {
+            0%{
+                transform:translate(0,0) rotate(0deg);
+                /* margin-left: 0px; */
+                filter: blur(0px) grayscale(0%);
+            }
+            25%{
+                transform:translate(500px,0) rotate(360deg);
+                /* margin-left: 500px; */
+                /* margin-top: 0px; */
+            }
+            50%{
+                transform: translate(500px,400px) rotate(360deg);
+                /* margin-left: 500px; */
+                /* margin-top: 400px; */
+            }
+            75%{
+                transform: translate(0,400px) rotate(360deg);
+            }
+            100%{
+                transform:translate(0,0) rotate(360deg);
+                filter: blur(0px) grayscale(0%);
+                /* margin-left: 0px; */
+                /* margin-top: 400px; */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="football">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPnLaQdrqH385fnS-1wbi6pzzm1uI4JguN0ugMAuMvFA&s=10" alt="">
+    </div>
+</body>
+</html>

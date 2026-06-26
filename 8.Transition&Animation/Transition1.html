@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #box{
+            margin-left: 5px;
+            padding-left: 5px;
+            margin-top: 25px;
+            background:linear-gradient(to left,purple,blue);
+            width: 160px;
+            height: 100px;
+            border-radius: 50px;
+            transition-duration: backgroundlcolor;
+            transition-duration: 3s;
+            transition-delay: 0s;
+            border: 5px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+        }
+        #box:hover{
+            background: linear-gradient(to left,red,yellow);
+            width: 250px;
+            height:150px;
+            color: black;
+        }
+        #button{
+            color:black;
+            border: black solid 2px;
+            border-radius: 10px;
+            width: 50px;
+            height: 25px;
+            margin: 30px;
+            
+            /* transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 0s; */
+            transition: all 1s 0s ease-in;
+
+        }
+        #button:hover{
+            background-color: aqua;
+            color: black;
+            scale: 1.1;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">Hover to see the tansition</div>
+    <!-- <button id="button">Click</button>
+    <button type="click">Submit</button> -->
+</body>
+</html>
