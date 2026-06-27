@@ -1,0 +1,54 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+}
+body,html{
+    height: 100vh;
+    width: 100vw;
+} */
+.reviews-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    height: 100px;
+}
+.review-card{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: aquamarine;
+    padding: 0.5rem;
+}
+.review-card h3{
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+.review-text{
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+.review-person{
+    font-size: 10px;
+    font-weight: 700;
+}
+@media(max-width:1000px){
+    .reviews-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    body{
+        background-color: blue;
+    }
+}
+@media (max-width:600px) {
+    .reviews-grid{
+        grid-template-columns:1fr;
+    }
+    body{
+        background-color: blueviolet;
+    }
+}
+@media (max-width:500px) {
+    
+    body{
+        background-color: red;
+    }
+}
