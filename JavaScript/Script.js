@@ -1,0 +1,10 @@
+var name = 'Nitu';
+var address ='Vadodara';
+console.table({name:'XYZ'});
+console.group();
+console.log('Normal Text');
+console.warn('Normal Text');
+console.error('Normal Text');
+console.groupEnd();
+console.group('This is Grouped Text_END');
+console.error('Normal Text');

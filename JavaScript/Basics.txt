@@ -1,0 +1,3 @@
+compiler+Interpreter = JIT compiler(just In Time)
+JavaScript is core Technologies of thw web alongside HTML & CSS.
+JavaScript is high level,interpreted programming language that can be used as client side as well as server side with Node.JavaScript
