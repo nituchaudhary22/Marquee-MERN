@@ -17,7 +17,6 @@
 //     console.log(name); //reference error
 //     let name='Nitu';
 // }
-
 // 3. Const (Recommended for constants)
 // --Block-scoped.
 // --Must be initialized at declaration.
@@ -41,7 +40,11 @@
 // 6. Symbol-Represents a unique and immutable value (often used as objectkeys)
 // 7. NaN --isNan()Number. NaN is a property in JavaScript that represents a special value indicating that a value of a expression is not a number. It stands for "Not-A-Number" and is a unique data type in JavaStript This property is used to identify values that do not represent a valid number, which can occur in various situations
 // such as when a mathematical operation falls to produce a numeric result
-//type coercion -JS automatically converts from one datatyoe to another
+//Type coercion -JS automatically converts from one datatype to another
+//1.Implicit type conversion-(Type coercion)-done automatically by js
+//2.Explicit typ econversion -(Type casting)-Done manually by programmer
+
+
 // console.log(name);
 // var name;
 // var name;
@@ -60,3 +63,21 @@
 // function accessVariable(){
 //     console.log(name)
 // }
+ function AddtwoNumbers(a,b){
+    console.log(a+b);
+ }
+ AddtwoNumbers(13,23);
+ let human ={
+   name :'Nitu',
+   age :100,
+   address :'India',
+   isMinor : false,
+   marks:[2,4,54,5],
+
+   greet : function(){
+      console.log('Good Morning');
+   }
+ }
+ console.log(typeof(human));
+ console.log(typeof(human.isMinor));
+ console.log(human.greet());
