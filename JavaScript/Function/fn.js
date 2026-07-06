@@ -49,3 +49,7 @@ function sum(...numbers) {
 
 console.log(sum(1, 2, 3, 4));
 // 10
+
+(function (val1,val2){
+    console.log(`Hello greet ${val1 + val2}`);
+})(12,12);
