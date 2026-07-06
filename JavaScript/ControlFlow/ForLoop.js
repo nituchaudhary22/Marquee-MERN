@@ -45,3 +45,5 @@ function notdivisible() {
   }
 }
 notdivisible();
+
+console.log('hello');
