@@ -61,6 +61,8 @@ console.log(sum(1, 2, 3, 4));
 //immedialtely invoked function expression--
 //function declaration--
 
+
+//factory function -that returns object every time it is called
 function createPerson(name, age) {
     return {
         name: name,
