@@ -31,15 +31,10 @@ function createBankAccount(AccountHolder , Mobile , Email , Balance =0 ){
 
 function sendMail(transaction, amount, balance) {
     console.log(`
-
 To: ${this.Email}
-
 Hello ${this.AccountHolder},
-
 This is to inform you that an amount of ₹${amount} has been successfully ${transaction}ed.
-
 Available Balance: ₹${balance}
-
 `);
 }
 
