@@ -1,14 +1,16 @@
 class Bank {
   // Private Properties and Methods
   #percentageInProfit = 1.5;
+
   #calculatePercentage() {
     console.log(
       `Your income will be calculated by ${this.#percentageInProfit} * ${this.balance}`
     );
   }
-  // Private Properties and Methods
 
-  static bankCode = 'CBIN0078';
+  // Static Properties and Methods
+  static bankCode = "CBIN0078";
+
   static getBankCode() {
     return `Bank Code: ${this.bankCode}`;
   }
@@ -20,8 +22,8 @@ class Bank {
     this.balance = amount;
   }
 
-  set email(emailvalue) {
-    this._email = emailvalue;
+  set email(emailValue) {
+    this._email = emailValue;
   }
 
   get email() {
@@ -30,68 +32,112 @@ class Bank {
 
   deposit(amount) {
     this.balance += Number(amount);
+
     console.log(
       `Amount of Rs. ${amount} is Deposited by ${this.__accountHolderName}`
     );
-    console.log(Object());
 
-    Object().__proto__.sendDepositEmail.call(this, 9000);
+    console.log(this.sendDepositEmail(amount));
   }
+
   checkBalance() {
-    console.log(`Your balance is ${this.balance}`);
+    console.log(`Your balance is Rs. ${this.balance}`);
   }
+
   withdraw(amount) {
     if (amount !== undefined && amount !== 0) {
-      if (this.balance <= 0 || this.balance < amount) {
-        console.log('Insufficient Balance');
-        // console.log(InsufficientFundEmail.call(this, amount));
+      if (this.balance < amount) {
+        console.log("Insufficient Balance");
+        console.log(this.insufficientFundEmail(amount));
       } else {
-        this.balance -= amount;
-        console.log(`Amount Withdrawn : Rs ${amount}`);
-        console.log(this);
+        this.balance -= Number(amount);
 
-        let sendEmail = sendWithdrawEmail.bind(
-          this,
-          amount,
-          this.__accountHolderName
-        );
-        console.log(sendEmail());
+        console.log(`Amount Withdrawn : Rs. ${amount}`);
+
+        console.log(this.sendWithdrawEmail(amount));
       }
     } else {
-      console.log(`Please Enter amount to Withdraw(----AMOUNT-----)`);
+      console.log("Please Enter amount to Withdraw");
     }
   }
+
   getPercentage() {
-    console.log(`The Percetage is ${this.#percentageInProfit}`);
+    console.log(`The Percentage is ${this.#percentageInProfit}`);
     this.#calculatePercentage();
   }
+
   checkBankProfile() {
-    const { _accountHolderName, mobile, email, balance } = this;
-    console.log(`Account Holder = ${_accountHolderName} `);
-    console.log(`Mobile no. = ${mobile}`);
-    console.log(`Email = ${email}`);
-    console.log(`Account Balance = ${Number(balance)}`);
+    console.log(`Account Holder = ${this.__accountHolderName}`);
+    console.log(`Mobile No. = ${this.mobile}`);
+    console.log(`Email = ${this.email}`);
+    console.log(`Account Balance = Rs. ${this.balance}`);
   }
 }
 
-Object().__proto__.sendDepositEmail = function (amount) {
-  return `To ${this.accountHolderName},
-    This is to inform you that amount of Rs.${amount} is deposited`;
+// ================= Object Prototype Methods =================
+
+Object.prototype.sendDepositEmail = function (amount) {
+  return `
+To ${this.__accountHolderName},
+
+This is to inform you that an amount of Rs.${amount} has been deposited.
+
+Available Balance: Rs.${this.balance}
+`;
 };
 
-function sendWithdrawEmail(amount, name) {
-  return `To ${name},
-    This is to inform you that amount of Rs.${amount} is withdrawn | Available Balance is ${this.balance}`;
-}
+Object.prototype.sendWithdrawEmail = function (amount) {
+  return `
+To ${this.__accountHolderName},
 
-function InsufficientFundEmail(amount) {
-  return `To ${this.accountHolderName},
-    You're trying to withdraw Balance then available Rs .${amount}`;
-}
+This is to inform you that an amount of Rs.${amount} has been withdrawn.
 
-let obj1 = new Bank('Raj', '5959561000', 'raj45@gmail.com', 522000);
+Available Balance: Rs.${this.balance}
+`;
+};
+
+Object.prototype.insufficientFundEmail = function (amount) {
+  return `
+To ${this.__accountHolderName},
+
+Transaction Failed!
+
+You tried to withdraw Rs.${amount},
+but your available balance is only Rs.${this.balance}.
+`;
+};
+
+// ================= Driver Code =================
+
+let obj1 = new Bank(
+  "Raj",
+  "5959561000",
+  "raj45@gmail.com",
+  522000
+);
+
+obj1.checkBankProfile();
+
+console.log("------------------------");
 
 obj1.deposit(9000);
-console.log('Calling');
 
-console.log(Object().__proto__.sendDepositEmail.call(obj1, 90000));
+console.log("------------------------");
+
+obj1.withdraw(10000);
+
+console.log("------------------------");
+
+obj1.withdraw(600000);
+
+console.log("------------------------");
+
+obj1.checkBalance();
+
+console.log("------------------------");
+
+obj1.getPercentage();
+
+console.log("------------------------");
+
+console.log(Bank.getBankCode());
